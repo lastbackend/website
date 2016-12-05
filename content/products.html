@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    {{ partial "head" . }}
+
+    {{ partial "scripts" . }}
+
+</head>
+
+<body>
+
+    {{ partial "nav" .}}
+
+    {{ partial "products/preview" .}}
+
+    {{ partial "products/kinds" .}}
+
+    {{ partial "products/use_cases" .}}
+
+    {{ partial "products/resources" .}}
+
+    {{ partial "bottom_nav" . }}
+
+    {{ partial "footer" . }}
+
+    <script src="{{ "/js/deploy_cli.js" | absURL }}"></script>
+
+</body>
+
+</html>
