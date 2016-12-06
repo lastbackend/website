@@ -36,7 +36,7 @@
     }
 
     function click() {
-        input.style.display("display", "inline-block");
+        input.style.display = "inline-block";
         input.focus();
         Array.prototype.forEach.call(document.getElementsByClassName('lb-hm-cli__cm'), hide);
 
