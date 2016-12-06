@@ -666,8 +666,30 @@ select.form-control:not([size]):not([multiple]) {
     z-index: 0;
 }
 
+.team_text {
+    padding-bottom: 50px;
+}
+
+.team hr {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
 .popover-content {
     font-size: 30%;
+}
+
+.team img {
+    width: 150px;
+}
+
+.team {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.philosophy {
+    padding-bottom: 150px;
 }
 
 .fa-quote-left {
@@ -676,12 +698,129 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 300%;
 }
 
-.nav_drop_products .media {
+.team p {
+    color: #424242;
+}
+
+.about-preview {
+    padding-bottom: 100px;
+    text-align: left;
+}
+
+.timeline-main {
+    padding-bottom: 100px;
+}
+
+.timeline {
+    padding-top: 150px;
+    color: #bdbdbd;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 72px;
+    text-align: right;
+}
+
+.yr {
+    padding-left: 100px;
+}
+
+.yl {
+    padding-right: 100px;
+}
+
+.year {
+    font-size: 7em;
+    font-weight: 600;
+}
+
+.year span {
+    font-size: 0.15em;
+}
+
+.tbc {
+    padding-bottom: 100px;
+}
+
+.y_2016 {
+    margin-top: 150px;
+}
+
+.yl {
+    padding-bottom: 100px;
+}
+
+.d_r {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #eeeeee;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 464px;
+    height: 160px;
+    text-align: left;
+}
+
+.left_align {
+    text-align: left;
+}
+
+.d_l {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #eeeeee;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 464px;
+    height: 160px;
+    text-align: right;
+}
+
+.timeline p {
+    color: #424242;
+}
+
+.timeline .source {
+    text-align: center;
+}
+
+.team hr {
+    background-color: #eeeeee;
+    height: 1px;
+    width: 100%;
+}
+
+.about-preview p {
+    padding-bottom: 25px;
+}
+
+.team .source_pro {
+    color: #bdbdbd;
+    font-size: 4em;
+}
+
+.team .minion {
+    color: #424242;
+    font-size: 4.3em;
+}
+
+.about-preview .source_pro {
+    font-size: 1.3em;
+    color: #ffffff;
     line-height: 24px;
+}
+
+.nav_drop_products .media {
+    line-height: 18px;
 }
 
 .nav_drop_products .media-body {
     padding-top: 5px;
+    font-size: 0.9em;
+}
+
+.nav_drop_products img {
+    width: 50px;
 }
 
 .popover.bs-tether-element-attached-bottom::after, .popover.popover-top::after {
@@ -899,7 +1038,7 @@ select.form-control:not([size]):not([multiple]) {
     height: 275px;
     border-radius: 5px;
     color: #ffffff;
-    background-color:  #000000;
+    background-color: #000000;
 }
 
 .new_cli_text {
