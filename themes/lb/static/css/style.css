@@ -19,8 +19,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     color: #2275dc;
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 1.1em;
 }
 
 .navbar-brand img {
@@ -50,7 +49,7 @@ body {
 
 .navbar-light .navbar-nav .active > .nav-link {
     color: #feffff;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .navbar-light .navbar-nav .nav-link {
