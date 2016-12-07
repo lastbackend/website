@@ -658,6 +658,10 @@ select.form-control:not([size]):not([multiple]) {
     font-style: italic;
 }
 
+.apps_img img {
+    width: 950px;
+}
+
 .popover {
     position: inherit;
     margin-bottom: 100px;
