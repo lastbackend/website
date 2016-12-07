@@ -56,6 +56,5 @@ window.onload = function show_deploy_cli() {
 
 function printText(text) {
     var p = document.querySelector('.new_cli_text');
-    // p.innerHTML = text;
-    console.log(text);
+    p.innerHTML = text;
 }

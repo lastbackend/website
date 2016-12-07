@@ -23,8 +23,7 @@ body {
 }
 
 .navbar-brand img {
-    width: 125px;
-    padding-top: 12px;
+    padding-top: 7px;
     padding-right: 3%;
 }
 
@@ -68,6 +67,24 @@ body {
 
 .preview_enterprise {
     padding-bottom: 200px;
+}
+
+.email-form-in-preview {
+    border-radius: 40px;
+    margin-right: 10px;
+}
+
+.okay .form-control {
+    background-color: #ffffff;
+}
+
+.okay {
+    margin-top: 50px;
+}
+
+.form-inline .input-group > .form-control {
+    width: 375px;
+    height: 75px;
 }
 
 .source {
@@ -121,8 +138,7 @@ body {
     background-color: #ffee58;
     box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.35);
     border-radius: 40px;
-    width: 275px;
-    margin-top: 5%;
+    width: 250px;
 }
 
 .fa-long-arrow-right {
@@ -133,6 +149,10 @@ body {
 .main_cli_div {
     text-align: left;
     width: 725px;
+}
+
+.data-next-step {
+    font-size: 3em;
 }
 
 .keyboard {
@@ -153,7 +173,7 @@ body {
 }
 
 .cloud_deploy {
-    padding-bottom: 100px;
+    padding-bottom: 125px;
     margin-bottom: 75px;
     border-bottom: 3px solid #f5f5f5;
 }
@@ -180,12 +200,16 @@ body {
 }
 
 .kinds {
-    padding-top: 150px;
+    padding-top: 125px;
     border-bottom: 3px solid #f5f5f5;
 }
 
 .dedicated_kinds img {
     width: 40%;
+}
+
+.github-link hr {
+    width: 70%;
 }
 
 .kinds .col-lg-4 {
@@ -196,10 +220,18 @@ body {
     padding-bottom: 100px;
 }
 
+.github-link {
+    padding: 50px;
+    margin-top: 75px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1);
+}
+
 .blue_text {
     color: #2979ff;
     font-size: 1.875em;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .dedicated_pdf .source {
@@ -212,8 +244,52 @@ body {
     padding-bottom: 100px;
 }
 
+.auto .view-github {
+    background-color:  #3e94ff;
+    color: #ffffff;
+    font-size: 1.3em;
+    box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1)
+}
+
+.auto .view-github .fa {
+    font-size: 1.1em;
+}
+
+.view-github {
+    background-color: #212121;
+    border-radius: 3px;
+    height: 75px;
+    font-size: 1.3em;
+    line-height: 1em;
+}
+
+.view-github:hover {
+    background-color: #000000;
+}
+
+.view-github a {
+    text-decoration: none;
+}
+
+.view-github p {
+    padding-top: 10px;
+}
+
 .dedicated_pdf p {
     text-align: left;
+}
+
+.bottom_preview .third_text {
+    font-size: 0.5em;
+}
+
+.use-cases .offset-lg-2 {
+    margin-left: 350px;
+}
+
+.bottom_preview .fa {
+    padding-left: 5px;
+    font-size: 1.1em;
 }
 
 .pr_kind {
@@ -221,8 +297,9 @@ body {
     height: 275px;
     border-radius: 3px;
     background-color: #ffffff;
-    box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
+    box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1);
+    margin-left: 200px;
+    margin-bottom: 200px;
 }
 
 .dedicated_map {
@@ -289,7 +366,6 @@ body {
 .products_kinds {
     background-color: #2275dc;
     text-align: left;
-    padding-bottom: 100px;
 }
 
 .products_kinds .third_text {
@@ -381,7 +457,7 @@ body {
 }
 
 .deploy {
-    padding-bottom: 25px;
+    /*padding-bottom: 25px;*/
     margin-top: 150px;
 }
 
@@ -493,6 +569,15 @@ hr {
     margin-top: 25px;
 }
 
+.auto {
+    padding-top: 100px;
+    padding-bottom: 125px;
+}
+
+.auto .source_pro{
+    font-size: 4em;
+}
+
 .map .second_text {
     font-size: 1.7em;
     font-weight: 300;
@@ -502,6 +587,11 @@ hr {
 .bottom_preview {
     padding-top: 100px;
     padding-bottom: 85px;
+}
+
+.bottom_preview a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .bottom_preview .source {
@@ -535,6 +625,11 @@ hr {
     color: #757575;
     font-size: 0.875em;
     font-weight: 300;
+    text-decoration: none;
+}
+
+.bottom_nav a:hover {
+    color: #ffffff;
 }
 
 footer {
@@ -553,7 +648,6 @@ footer {
 }
 
 .form-control {
-    border-radius: 0;
     background-color: #151515;
     padding: 15px;
 }
@@ -813,13 +907,16 @@ select.form-control:not([size]):not([multiple]) {
     line-height: 24px;
 }
 
+.media-body {
+    padding-left: 5px;
+}
+
 .nav_drop_products .media {
     line-height: 18px;
 }
 
 .nav_drop_products .media-body {
-    padding-top: 5px;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .nav_drop_products img {
@@ -925,13 +1022,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .cli_before_text {
     font-family: "Source Code Pro", sans-serif;
-    color: black;
-    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 4em;
 }
 
 .cli_text {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .w-cli,
@@ -940,7 +1037,7 @@ select.form-control:not([size]):not([multiple]) {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    height: 250px;
+    height: 350px;
     margin: 0 auto;
     padding: 12px 18px;
     background: black;
@@ -1036,6 +1133,10 @@ select.form-control:not([size]):not([multiple]) {
     outline: none;
 }
 
+.dropdown hr {
+    width: 100%;
+}
+
 .deploy_cli_interactive {
     width: 450px;
     height: 275px;
@@ -1049,4 +1150,20 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 1em;
     letter-spacing: 0.05em;
     line-height: 30px;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .active > .nav-link:focus, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .nav-link.active:hover, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .nav-link:hover {
+    color: #ffffff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
 }
