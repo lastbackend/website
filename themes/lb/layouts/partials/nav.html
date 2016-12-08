@@ -15,14 +15,14 @@
 
             <li class="nav-item active dropdown nav_drop_products ">
 
-                <a class="nav-link" href="#" data-toggle="dropdown"
+                <a class="nav-link" href="#"
                    aria-haspopup="true" aria-expanded="false">Products</a>
 
                 <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
                     <a class="dropdown-item" href="{{ "cloud" | absURL }}">
 
                         <div class="media">
-                            <p class="media-left">
+                            <p class="media-left align-middle">
                                 <img data-lazy-src="{{ .Params.image }}" src="../img/l_menu_cloud.png">
                             </p>
 
@@ -35,15 +35,17 @@
 
                     </a>
 
+                    <hr>
+
                     <a class="dropdown-item" href="{{ "dedicated" | absURL }}">
 
                         <div class="media">
-                            <p class="media-left">
+                            <p class="media-left align-middle">
                                 <img data-lazy-src="{{ .Params.image }}" src="../img/l_menu_dedicated.png">
                             </p>
 
                             <div class="media-body">
-                                <h2 class="media-headingc orange_text">Dedicated</h2>
+                                <h2 class="media-heading orange_text">Dedicated</h2>
                                 Develop, host, and scale your apps<br>
                                 in the your own cloud cluster.
                             </div>
@@ -51,10 +53,12 @@
 
                     </a>
 
+                    <hr>
+
                     <a class="dropdown-item" href="{{ "enterprise" | absURL }}">
 
                         <div class="media">
-                            <p class="media-left">
+                            <p class="media-left align-middle">
                                 <img data-lazy-src="{{ .Params.image }}" src="../img/l_menu_enterprise.png">
                             </p>
 
@@ -77,7 +81,7 @@
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link" href="#" data-toggle="dropdown"
+                <a class="nav-link" href="#"
                    aria-haspopup="true" aria-expanded="false">Company</a>
 
                 <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
@@ -118,21 +122,9 @@
                 </a>
             </li>
 
-            <li class="nav-item float-lg-right">
-                <a class="nav-link" href="#">
-                    <button class="btn btn-secondry btn-sm">SIGN UP</button>
-                </a>
-            </li>
-
-            <li class="nav-item float-lg-right">
-                <a class="nav-link">
-                    or
-                </a>
-            </li>
-
             <li class="nav-item float-lg-right active">
-                <a class="nav-link login" href="#">
-                    LOG IN
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    View on GitHub
                 </a>
             </li>
 
