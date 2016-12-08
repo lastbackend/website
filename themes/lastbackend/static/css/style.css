@@ -22,6 +22,11 @@ body {
     font-size: 1.1em;
 }
 
+.tases2 {
+    display: none;
+    color: #212121;
+}
+
 .navbar-brand img {
     padding-top: 7px;
     padding-right: 3%;
@@ -33,7 +38,16 @@ body {
 
 .navbar button {
     width: 100px;
-    height: 40px;
+height: 40px;
+}
+
+.auto_img {
+    padding-top: 50px;
+}
+
+.auto_img img {
+    width: 950px;
+    box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1);
 }
 
 .navbar-nav li a {
@@ -46,7 +60,7 @@ body {
     color: #ffffff;
 }
 
-.navbar-light .navbar-nav .active > .nav-link {
+.navbar-light .navbar-nav.active > .nav-link {
     color: #feffff;
     font-size: 1em;
 }

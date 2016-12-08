@@ -50,6 +50,8 @@
         var em = document.querySelector('.email-form-in-preview');
         var okay = document.querySelector('.okay');
         var text_after = document.querySelector('.text_after_success_email_send');
+        var okay2 = document.querySelector('.okay2');
+        var tases2 = document.querySelector('.tases2');
 
         if (em.value == '') {
             em = document.querySelector('.email-form-2')
@@ -62,8 +64,14 @@
                 created_at: new Date().now
             });
 
+            em.value = '';
+
             okay.style.display = 'none';
             text_after.style.display = 'block';
+
+            okay2.style.display = 'none';
+            tases2.style.display = 'block';
+
 
             return true;
         } else {
