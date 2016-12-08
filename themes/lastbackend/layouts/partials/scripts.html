@@ -48,24 +48,26 @@
     function sendEmail() {
 
         var em = document.querySelector('.email-form-in-preview');
+        var okay = document.querySelector('.okay');
+        var text_after = document.querySelector('.text_after_success_email_send');
 
         if (em.value == '') {
             em = document.querySelector('.email-form-2')
         }
 
-        a = validateEmail(em.value);
-        if (a == true) {
+        if (validateEmail(em.value)) {
             window.Intercom('boot', {
                 app_id: 'e2la2rzj',
                 email: em.value,
                 created_at: new Date().now
             });
 
-            em.value = '';
+            okay.style.display = 'none';
+            text_after.style.display = 'block';
 
             return true;
         } else {
-            em.value = 'Enter correct E-mail';
+            em.style.color = '#F01300';
         }
     }
 </script>

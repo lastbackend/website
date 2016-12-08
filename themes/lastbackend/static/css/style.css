@@ -387,6 +387,11 @@ body {
     padding-bottom: 150px;
 }
 
+.text_after_success_email_send {
+    display: none;
+    font-size: 2em;
+}
+
 .ico_form_img {
     padding-top: 150px;
     background-color: #212121;
