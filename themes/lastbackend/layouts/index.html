@@ -85,9 +85,31 @@
             var text_after = document.querySelector('.text_after_success_email_send');
             var okay2 = document.querySelector('.okay2');
             var tases2 = document.querySelector('.tases2');
+            var name = document.querySelector('.inter_name');
+            var company = document.querySelector('.inter_com');
+            var com_email = document.querySelector('.inter_mail');
 
             if (em.value == '') {
                 em = document.querySelector('.email-form-2')
+            }
+
+            if (em.value == ''){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'e2la2rzj',
+                        email: com_email.value,
+                        company: company,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'action', 'company email');
+
+                    com_email.value = '';
+
+                    return true;
+                } else {
+                    com_email.style.color = '#F01300';
+                }
             }
 
             if (validateEmail(em.value)) {
@@ -96,6 +118,8 @@
                     email: em.value,
                     created_at: new Date().now
                 });
+
+                ga('send', 'action', 'user email');
 
                 em.value = '';
 

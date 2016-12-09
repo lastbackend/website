@@ -69,6 +69,7 @@
         }
     </script>
 
+
     <script>
         function sendEmail() {
 
@@ -77,30 +78,61 @@
             var text_after = document.querySelector('.text_after_success_email_send');
             var okay2 = document.querySelector('.okay2');
             var tases2 = document.querySelector('.tases2');
+            var name = document.querySelector('.inter_name');
+            var company = document.querySelector('.inter_com');
+            var com_email = document.querySelector('.inter_mail');
+            var lame = document.querySelector('.inter_last_name');
 
-            if (em.value == '') {
-                em = document.querySelector('.email-form-2')
-            }
+            console.log(name.value, company.value, com_email.value, lame.value);
 
-            if (validateEmail(em.value)) {
-                window.Intercom('boot', {
-                    app_id: 'e2la2rzj',
-                    email: em.value,
-                    created_at: new Date().now
-                });
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom('boot', {
+                        name: name.value + ' ' + lame.value,
+                        app_id: 'e2la2rzj',
+                        email: com_email.value,
+                        company: {
+                            id: '123',
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
 
-                em.value = '';
+                    ga('send', 'action', 'company email');
 
-                okay.style.display = 'none';
-                text_after.style.display = 'block';
+                    com_email.value = '';
 
-                okay2.style.display = 'none';
-                tases2.style.display = 'block';
-
-
-                return true;
+                    return true;
+                } else {
+                    com_email.style.color = '#F01300';
+                }
             } else {
-                em.style.color = '#F01300';
+                if (em.value == '') {
+                    em = document.querySelector('.email-form-2')
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'e2la2rzj',
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'action', 'user email');
+
+                    em.value = '';
+
+                    okay.style.display = 'none';
+                    text_after.style.display = 'block';
+
+                    okay2.style.display = 'none';
+                    tases2.style.display = 'block';
+
+
+                    return true;
+                } else {
+                    em.style.color = '#F01300';
+                }
             }
         }
     </script>

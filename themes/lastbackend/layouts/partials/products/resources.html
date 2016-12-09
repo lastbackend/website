@@ -1,36 +1,34 @@
 <div class="container-fluid enterprise_resources">
-    <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-            <p class="source resources_main_text">
-                RESOURCES
-            </p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_pdf.png">
-
-            <p>
-                Last.Backend Cloud, designed<br>
-                for developers
-            </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <p class="source resources_main_text">
+                    RESOURCES
+                </p>
+            </div>
         </div>
 
-        <div class="col-lg-4">
-            <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_pdf.png">
+        <div class="row">
 
-            <p>
-                Last.Backend Dedicated Cloud
-            </p>
-        </div>
+            <div class="col-lg-6">
+                <a href="{{ "../documents/datasheet_dedicated_cloud.pdf" | absURL }}">
+                <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_pdf.png">
 
-        <div class="col-lg-4">
-            <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_pdf.png">
+                    <p>
+                        Last.Backend Dedicated Cloud
+                    </p>
+                </a>
+            </div>
 
-            <p>
-                Last.Backend Enterprise
-            </p>
+            <div class="col-lg-6">
+                <a href="{{ "../documents/datasheet_enterprise.pdf" | absURL }}">
+                    <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_pdf.png">
+
+                    <p>
+                        Last.Backend Enterprise
+                    </p>
+                </a>
+            </div>
         </div>
     </div>
 </div>

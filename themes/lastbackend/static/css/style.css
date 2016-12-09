@@ -1156,7 +1156,7 @@ select.form-control:not([size]):not([multiple]) {
     width: 100%;
 }
 
-.deploy_cli_interactive {
+.deploy_cli_interactive img {
     width: 450px;
     height: 275px;
     border-radius: 5px;
