@@ -13,19 +13,25 @@
 
     {{ partial "nav" .}}
 
-    {{ partial "dedicated/preview" . }}
+    {{ partial "home/preview" . }}
 
-    {{ partial "dedicated/kinds" . }}
+    {{ partial "home/deploy" . }}
 
-    {{ partial "dedicated/pdf" . }}
+    {{ partial "home/cli" . }}
 
-    {{ partial "dedicated/map" . }}
+    {{ partial "home/kinds" . }}
 
-    {{ partial "feedback" . }}
+    {{ partial "home/auto" . }}
+
+    {{ partial "home/map" . }}
+
+    {{ partial "home/bottom_preview" . }}
 
     {{ partial "bottom_nav" . }}
 
     {{ partial "footer" . }}
+
+    <script src="{{ "/js/slider.js" | absURL }}"></script>
 
     <script>
         (function () {
@@ -68,7 +74,6 @@
             return re.test(email);
         }
     </script>
-
 
     <script>
         function sendEmail() {
@@ -137,6 +142,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

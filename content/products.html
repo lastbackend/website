@@ -25,6 +25,117 @@
 
     {{ partial "footer" . }}
 
+    <script>
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/hufjeo4r';
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })()
+    </script>
+
+    <script>
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    </script>
+
+
+    <script>
+        function sendEmail() {
+
+            var em = document.querySelector('.email-form-in-preview');
+            var okay = document.querySelector('.okay');
+            var text_after = document.querySelector('.text_after_success_email_send');
+            var okay2 = document.querySelector('.okay2');
+            var tases2 = document.querySelector('.tases2');
+            var name = document.querySelector('.inter_name');
+            var company = document.querySelector('.inter_com');
+            var com_email = document.querySelector('.inter_mail');
+            var lame = document.querySelector('.inter_last_name');
+            var fd_af = document.querySelector('.feedback_after');
+            var fd = document.querySelector('.feedback_form');
+
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom('boot', {
+                        name: name.value + ' ' + lame.value,
+                        app_id: 'hufjeo4r',
+                        email: com_email.value,
+                        company: {
+                            id: company.value.toLowerCase(),
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'company', 'email');
+
+                    fd.style.display = 'none';
+                    fd_af.style.display = 'block';
+
+                    return true;
+                } else {
+                    com_email.style.color = '#F01300';
+                }
+            } else {
+                if (em.value == '') {
+                    em = document.querySelector('.email-form-2')
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'e2la2rzj',
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'user', 'email');
+
+                    em.value = '';
+
+                    okay.style.display = 'none';
+                    text_after.style.display = 'block';
+
+                    okay2.style.display = 'none';
+                    tases2.style.display = 'block';
+
+
+                    return true;
+                } else {
+                    em.style.color = '#F01300';
+                }
+            }
+        }
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,48 @@
+<div class="container-fluid ico_form_img" id="feedback">
+    <p>
+        <img data-lazy-src="{{ .Params.image }}" src="../img/l_d_ico_contact_form.png">
+    </p>
+
+    <p class="second_text">
+        Please fiil the form below and we'll contact you as soon as possible.
+    </p>
+</div>
+
+<div class="container-fluid feedback">
+
+    <div class="feedback_after">
+        Thank you! We'll contact you soon.
+    </div>
+
+    <div class="feedback_form text-lg-center container">
+        <div class="form-group">
+
+            <input type="text" class="l inter_name form-control" aria-describedby="emailHelp"
+                   placeholder="First name *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="text" class="form-control inter_last_name" placeholder="Last name *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="email" class="inter_mail form-control" aria-describedby="emailHelp"
+                   placeholder="E-mail *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="text" class="form-control inter_com" placeholder="Company *">
+
+        </div>
+
+        <button onclick="sendEmail()" class="btn btn-secondary button_yellow">
+            <span>SUBMIT</span>
+        </button>
+    </div>
+</div>
