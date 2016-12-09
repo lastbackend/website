@@ -89,10 +89,10 @@
                 if (validateEmail(com_email.value)) {
                     window.Intercom('boot', {
                         name: name.value + ' ' + lame.value,
-                        app_id: 'e2la2rzj',
+                        app_id: 'hufjeo4r',
                         email: com_email.value,
                         company: {
-                            id: '123',
+                            id: company.value.toLowerCase(),
                             name: company.value
                         },
                         created_at: new Date().now
@@ -137,7 +137,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>

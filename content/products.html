@@ -79,51 +79,59 @@
             var name = document.querySelector('.inter_name');
             var company = document.querySelector('.inter_com');
             var com_email = document.querySelector('.inter_mail');
+            var lame = document.querySelector('.inter_last_name');
+            var fd_af = document.querySelector('.feedback_after');
+            var fd = document.querySelector('.feedback_form');
 
-            if (em.value == '') {
-                em = document.querySelector('.email-form-2')
-            }
-
-            if (em.value == ''){
+            if (em == null){
                 if (validateEmail(com_email.value)) {
                     window.Intercom('boot', {
-                        app_id: 'e2la2rzj',
+                        name: name.value + ' ' + lame.value,
+                        app_id: 'hufjeo4r',
                         email: com_email.value,
-                        company: company,
+                        company: {
+                            id: company.value.toLowerCase(),
+                            name: company.value
+                        },
                         created_at: new Date().now
                     });
 
                     ga('send', 'event', 'company', 'email');
 
-                    com_email.value = '';
+                    fd.style.display = 'none';
+                    fd_af.style.display = 'block';
 
                     return true;
                 } else {
                     com_email.style.color = '#F01300';
                 }
-            }
-
-            if (validateEmail(em.value)) {
-                window.Intercom('boot', {
-                    app_id: 'e2la2rzj',
-                    email: em.value,
-                    created_at: new Date().now
-                });
-
-                ga('send', 'event', 'user', 'email');
-
-                em.value = '';
-
-                okay.style.display = 'none';
-                text_after.style.display = 'block';
-
-                okay2.style.display = 'none';
-                tases2.style.display = 'block';
-
-
-                return true;
             } else {
-                em.style.color = '#F01300';
+                if (em.value == '') {
+                    em = document.querySelector('.email-form-2')
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'e2la2rzj',
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'user', 'email');
+
+                    em.value = '';
+
+                    okay.style.display = 'none';
+                    text_after.style.display = 'block';
+
+                    okay2.style.display = 'none';
+                    tases2.style.display = 'block';
+
+
+                    return true;
+                } else {
+                    em.style.color = '#F01300';
+                }
             }
         }
     </script>
