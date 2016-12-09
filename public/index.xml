@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Last.Backend</title>
+    <link>https://lastbackend.com/index.xml</link>
+    <description>Recent content on Last.Backend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://lastbackend.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/about/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+    {{ partial &#34;head&#34; . }}
+
+    {{ partial &#34;scripts&#34; . }}
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    {{ partial &#34;nav&#34; .}}
+
+    {{ partial &#34;about/preview&#34; . }}
+
+    {{ partial &#34;about/team&#34; . }}
+
+    {{ partial &#34;about/philosophy&#34; . }}
+
+    {{ partial &#34;bottom_nav&#34; . }}
+
+    {{ partial &#34;footer&#34; . }}
+
+&lt;/body&gt;
+
+&lt;/html&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/cloud/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+    {{ partial &#34;head&#34; . }}
+
+    {{ partial &#34;scripts&#34; . }}
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    {{ partial &#34;nav&#34; .}}
+
+    {{ partial &#34;home/preview&#34; . }}
+
+    {{ partial &#34;cloud/deploy&#34; . }}
+
+    {{ partial &#34;cloud/cli_main&#34; . }}
+
+    {{ partial &#34;cloud/apps&#34; . }}
+
+    {{ partial &#34;home/cli&#34; . }}
+
+    {{ partial &#34;home/map&#34; . }}
+
+    {{ partial &#34;home/bottom_preview&#34; . }}
+
+    {{ partial &#34;bottom_nav&#34; . }}
+
+    {{ partial &#34;footer&#34; . }}
+
+    &lt;script src=&#34;{{ &#34;/js/cli.js&#34; | absURL }}&#34;&gt;&lt;/script&gt;
+
+    &lt;script src=&#34;{{ &#34;/js/slider.js&#34; | absURL }}&#34;&gt;&lt;/script&gt;
+
+    &lt;script src=&#34;{{ &#34;/js/deploy_cli.js&#34; | absURL }}&#34;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+    (function () {
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === &#34;function&#34;) {
+            ic(&#39;reattach_activator&#39;);
+            ic(&#39;update&#39;, intercomSettings);
+        } else {
+            var d = document;
+            var i = function () {
+                i.c(arguments)
+            };
+            i.q = [];
+            i.c = function (args) {
+                i.q.push(args)
+            };
+            w.Intercom = i;
+            function l() {
+                var s = d.createElement(&#39;script&#39;);
+                s.type = &#39;text/javascript&#39;;
+                s.async = true;
+                s.src = &#39;https://widget.intercom.io/widget/hufjeo4r&#39;;
+                var x = d.getElementsByTagName(&#39;script&#39;)[0];
+                x.parentNode.insertBefore(s, x);
+            }
+
+            if (w.attachEvent) {
+                w.attachEvent(&#39;onload&#39;, l);
+            } else {
+                w.addEventListener(&#39;load&#39;, l, false);
+            }
+        }
+    })()
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function validateEmail(email) {
+            var re = /^(([^&lt;&gt;()\[\]\\.,;:\s@&#34;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function sendEmail() {
+
+            var em = document.querySelector(&#39;.email-form-in-preview&#39;);
+            var okay = document.querySelector(&#39;.okay&#39;);
+            var text_after = document.querySelector(&#39;.text_after_success_email_send&#39;);
+            var okay2 = document.querySelector(&#39;.okay2&#39;);
+            var tases2 = document.querySelector(&#39;.tases2&#39;);
+            var name = document.querySelector(&#39;.inter_name&#39;);
+            var company = document.querySelector(&#39;.inter_com&#39;);
+            var com_email = document.querySelector(&#39;.inter_mail&#39;);
+
+            if (em.value == &#39;&#39;) {
+                em = document.querySelector(&#39;.email-form-2&#39;)
+            }
+
+            if (em.value == &#39;&#39;){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: com_email.value,
+                        name: name.value,
+                        company: {
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;company&#39;, &#39;email&#39;);
+
+
+
+                    com_email.value = &#39;&#39;;
+
+                    return true;
+                } else {
+                    com_email.style.color = &#39;#F01300&#39;;
+                }
+            }
+
+            if (validateEmail(em.value)) {
+                window.Intercom(&#39;boot&#39;, {
+                    app_id: &#39;e2la2rzj&#39;,
+                    email: em.value,
+                    created_at: new Date().now
+                });
+
+                ga(&#39;send&#39;, &#39;event&#39;, &#39;user&#39;, &#39;email&#39;);
+
+                em.value = &#39;&#39;;
+
+                okay.style.display = &#39;none&#39;;
+                text_after.style.display = &#39;block&#39;;
+
+                okay2.style.display = &#39;none&#39;;
+                tases2.style.display = &#39;block&#39;;
+
+                return true;
+            } else {
+                em.style.color = &#39;#F01300&#39;;
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/dedicated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/dedicated/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+    {{ partial &#34;head&#34; . }}
+
+    {{ partial &#34;scripts&#34; . }}
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    {{ partial &#34;nav&#34; .}}
+
+    {{ partial &#34;dedicated/preview&#34; . }}
+
+    {{ partial &#34;dedicated/kinds&#34; . }}
+
+    {{ partial &#34;dedicated/pdf&#34; . }}
+
+    {{ partial &#34;dedicated/map&#34; . }}
+
+    {{ partial &#34;feedback&#34; . }}
+
+    {{ partial &#34;bottom_nav&#34; . }}
+
+    {{ partial &#34;footer&#34; . }}
+
+    &lt;script&gt;
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === &#34;function&#34;) {
+                ic(&#39;reattach_activator&#39;);
+                ic(&#39;update&#39;, intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement(&#39;script&#39;);
+                    s.type = &#39;text/javascript&#39;;
+                    s.async = true;
+                    s.src = &#39;https://widget.intercom.io/widget/hufjeo4r&#39;;
+                    var x = d.getElementsByTagName(&#39;script&#39;)[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent(&#39;onload&#39;, l);
+                } else {
+                    w.addEventListener(&#39;load&#39;, l, false);
+                }
+            }
+        })()
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function validateEmail(email) {
+            var re = /^(([^&lt;&gt;()\[\]\\.,;:\s@&#34;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    &lt;/script&gt;
+
+
+    &lt;script&gt;
+        function sendEmail() {
+
+            var em = document.querySelector(&#39;.email-form-in-preview&#39;);
+            var okay = document.querySelector(&#39;.okay&#39;);
+            var text_after = document.querySelector(&#39;.text_after_success_email_send&#39;);
+            var okay2 = document.querySelector(&#39;.okay2&#39;);
+            var tases2 = document.querySelector(&#39;.tases2&#39;);
+            var name = document.querySelector(&#39;.inter_name&#39;);
+            var company = document.querySelector(&#39;.inter_com&#39;);
+            var com_email = document.querySelector(&#39;.inter_mail&#39;);
+            var lame = document.querySelector(&#39;.inter_last_name&#39;);
+            var fd_af = document.querySelector(&#39;.feedback_after&#39;);
+            var fd = document.querySelector(&#39;.feedback_form&#39;);
+
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        name: name.value + &#39; &#39; + lame.value,
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: com_email.value,
+                        company: {
+                            id: &#39;123&#39;,
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;company&#39;, &#39;email&#39;);
+
+                    fd.style.display = &#39;none&#39;;
+                    fd_af.style.display = &#39;block&#39;;
+
+                    return true;
+                } else {
+                    com_email.style.color = &#39;#F01300&#39;;
+                }
+            } else {
+                if (em.value == &#39;&#39;) {
+                    em = document.querySelector(&#39;.email-form-2&#39;)
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;user&#39;, &#39;email&#39;);
+
+                    em.value = &#39;&#39;;
+
+                    okay.style.display = &#39;none&#39;;
+                    text_after.style.display = &#39;block&#39;;
+
+                    okay2.style.display = &#39;none&#39;;
+                    tases2.style.display = &#39;block&#39;;
+
+
+                    return true;
+                } else {
+                    em.style.color = &#39;#F01300&#39;;
+                }
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/enterprise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/enterprise/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+    {{ partial &#34;head&#34; . }}
+
+    {{ partial &#34;scripts&#34; . }}
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    {{ partial &#34;nav&#34; .}}
+
+    {{ partial &#34;enterprise/preview&#34; . }}
+
+    {{ partial &#34;enterprise/kinds&#34; . }}
+
+    {{ partial &#34;enterprise/why&#34; . }}
+
+    {{ partial &#34;enterprise/feedback&#34; . }}
+
+    {{ partial &#34;bottom_nav&#34; . }}
+
+    {{ partial &#34;footer&#34; . }}
+
+    &lt;script&gt;
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === &#34;function&#34;) {
+                ic(&#39;reattach_activator&#39;);
+                ic(&#39;update&#39;, intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement(&#39;script&#39;);
+                    s.type = &#39;text/javascript&#39;;
+                    s.async = true;
+                    s.src = &#39;https://widget.intercom.io/widget/hufjeo4r&#39;;
+                    var x = d.getElementsByTagName(&#39;script&#39;)[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent(&#39;onload&#39;, l);
+                } else {
+                    w.addEventListener(&#39;load&#39;, l, false);
+                }
+            }
+        })()
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function validateEmail(email) {
+            var re = /^(([^&lt;&gt;()\[\]\\.,;:\s@&#34;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function sendEmail() {
+
+            var em = document.querySelector(&#39;.email-form-in-preview&#39;);
+            var okay = document.querySelector(&#39;.okay&#39;);
+            var text_after = document.querySelector(&#39;.text_after_success_email_send&#39;);
+            var okay2 = document.querySelector(&#39;.okay2&#39;);
+            var tases2 = document.querySelector(&#39;.tases2&#39;);
+            var name = document.querySelector(&#39;.inter_name&#39;);
+            var company = document.querySelector(&#39;.inter_com&#39;);
+            var com_email = document.querySelector(&#39;.inter_mail&#39;);
+            var lame = document.querySelector(&#39;.inter_last_name&#39;);
+            var fd_af = document.querySelector(&#39;.feedback_after&#39;);
+            var fd = document.querySelector(&#39;.feedback_form&#39;);
+
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        name: name.value + &#39; &#39; + lame.value,
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: com_email.value,
+                        company: {
+                            id: &#39;123&#39;,
+                            name: company.value
+                        },
+                        created_at: new Date().now,
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;company&#39;, &#39;email&#39;);
+
+                    fd.style.display = &#39;none&#39;;
+                    fd_af.style.display = &#39;block&#39;;
+
+                    return true;
+                } else {
+                    com_email.style.color = &#39;#F01300&#39;;
+                }
+            } else {
+                if (em.value == &#39;&#39;) {
+                    em = document.querySelector(&#39;.email-form-2&#39;)
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;user&#39;, &#39;email&#39;);
+
+                    em.value = &#39;&#39;;
+
+                    okay.style.display = &#39;none&#39;;
+                    text_after.style.display = &#39;block&#39;;
+
+                    okay2.style.display = &#39;none&#39;;
+                    tases2.style.display = &#39;block&#39;;
+
+
+                    return true;
+                } else {
+                    em.style.color = &#39;#F01300&#39;;
+                }
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/products/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/products/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+    {{ partial &#34;head&#34; . }}
+
+    {{ partial &#34;scripts&#34; . }}
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    {{ partial &#34;nav&#34; .}}
+
+    {{ partial &#34;products/preview&#34; .}}
+
+    {{ partial &#34;products/kinds&#34; .}}
+
+    {{ partial &#34;products/use_cases&#34; .}}
+
+    {{ partial &#34;products/resources&#34; .}}
+
+    {{ partial &#34;bottom_nav&#34; . }}
+
+    {{ partial &#34;footer&#34; . }}
+
+    &lt;script&gt;
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === &#34;function&#34;) {
+                ic(&#39;reattach_activator&#39;);
+                ic(&#39;update&#39;, intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement(&#39;script&#39;);
+                    s.type = &#39;text/javascript&#39;;
+                    s.async = true;
+                    s.src = &#39;https://widget.intercom.io/widget/hufjeo4r&#39;;
+                    var x = d.getElementsByTagName(&#39;script&#39;)[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent(&#39;onload&#39;, l);
+                } else {
+                    w.addEventListener(&#39;load&#39;, l, false);
+                }
+            }
+        })()
+    &lt;/script&gt;
+
+    &lt;script&gt;
+        function validateEmail(email) {
+            var re = /^(([^&lt;&gt;()\[\]\\.,;:\s@&#34;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    &lt;/script&gt;
+
+
+    &lt;script&gt;
+        function sendEmail() {
+
+            var em = document.querySelector(&#39;.email-form-in-preview&#39;);
+            var okay = document.querySelector(&#39;.okay&#39;);
+            var text_after = document.querySelector(&#39;.text_after_success_email_send&#39;);
+            var okay2 = document.querySelector(&#39;.okay2&#39;);
+            var tases2 = document.querySelector(&#39;.tases2&#39;);
+            var name = document.querySelector(&#39;.inter_name&#39;);
+            var company = document.querySelector(&#39;.inter_com&#39;);
+            var com_email = document.querySelector(&#39;.inter_mail&#39;);
+
+            if (em.value == &#39;&#39;) {
+                em = document.querySelector(&#39;.email-form-2&#39;)
+            }
+
+            if (em.value == &#39;&#39;){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom(&#39;boot&#39;, {
+                        app_id: &#39;e2la2rzj&#39;,
+                        email: com_email.value,
+                        company: company,
+                        created_at: new Date().now
+                    });
+
+                    ga(&#39;send&#39;, &#39;event&#39;, &#39;company&#39;, &#39;email&#39;);
+
+                    com_email.value = &#39;&#39;;
+
+                    return true;
+                } else {
+                    com_email.style.color = &#39;#F01300&#39;;
+                }
+            }
+
+            if (validateEmail(em.value)) {
+                window.Intercom(&#39;boot&#39;, {
+                    app_id: &#39;e2la2rzj&#39;,
+                    email: em.value,
+                    created_at: new Date().now
+                });
+
+                ga(&#39;send&#39;, &#39;event&#39;, &#39;user&#39;, &#39;email&#39;);
+
+                em.value = &#39;&#39;;
+
+                okay.style.display = &#39;none&#39;;
+                text_after.style.display = &#39;block&#39;;
+
+                okay2.style.display = &#39;none&#39;;
+                tases2.style.display = &#39;block&#39;;
+
+
+                return true;
+            } else {
+                em.style.color = &#39;#F01300&#39;;
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

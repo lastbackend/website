@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://lastbackend.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/style.css">
+
+<title>Last.Backend</title>
+
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+
+    <script src="https://lastbackend.com/js/jquery-3.1.1.min.js"></script>
+
+<script src = "https://lastbackend.com/js/bootstrap.min.js" ></script>
+
+
+<script>
+    var keys       = {
+        'www.lastbackend.com' : 'UA-50023825-4',
+        'lastbackend.com'     : 'UA-50023825-4',
+        'cn.lastbackend.com'  : 'UA-50023825-4',
+        dev                   : 'UA-50023825-5',
+        '192.168.1.37'        : 'UA-50023825-5'
+    };
+    var domains    = {
+        'lastbackend.com'   : ['www.lastbackend.com','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        'cn.lastbackend.com': ['www.lastbackend.cn','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        dev                 : [
+            'lstbknd.net', 'app.lstbknd.net', 'dev.lstbknd.net', 'app.dev.lstbknd.net',
+            'localhost:4000', 'app.lb'
+        ]
+    };
+    var GA_KEY     = keys[document.domain] || keys.dev;
+    var GA_DOMAINS = domains[document.domain] || domains.dev;
+    var GA_local =
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src   = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', GA_KEY, 'auto', {'allowLinker': true});
+    ga('require', 'linker');
+    ga('linker:autoLink', GA_DOMAINS);
+    ga('send', 'pageview');
+    ga(tracking);
+
+    function tracking(tracker) {
+        var clientId = tracker.get('clientId');
+        ga('set', 'dimension1', clientId);
+
+        
+        var visited = getCookie('visited');
+        if (!visited) {
+            ga('send', 'event', 'user', 'init', '');
+        } else if (visited != clientId) {
+            ga('send', 'event', 'user', 'return', '');
+        }
+
+        var expires = new Date;
+        expires.setFullYear(expires.getFullYear() + 10);
+        setCookie('visited', clientId, {
+            expires: expires,
+            path   : '/'
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter28716836 = new Ya.Metrika({
+                    id: 28716836,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/28716836" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+
+    <button class="navbar-toggler hidden-lg-up" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+
+    <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+
+        <a class="navbar-brand hidden-lg-down" href="https://lastbackend.com">
+            <img data-lazy-src="" src="../img/l_logo.png">
+        </a>
+
+        <ul class="nav navbar-nav">
+
+            <li class="nav-item active dropdown nav_drop_products ">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">Products</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/cloud">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_cloud.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading blue_text">Cloud</h2>
+                                A complete cloud platform for<br>
+                                running modern apps.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/dedicated">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_dedicated.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading orange_text">Dedicated</h2>
+                                Develop, host, and scale your apps<br>
+                                in the your own cloud cluster.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/enterprise">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_enterprise.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading black_text">Enterprise</h2>
+                                Last.Backend offers the enterprise<br>
+                                features large companies need.
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend/wiki">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">Company</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/about">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                ABOUT LAST.BACKEND
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <a class="dropdown-item" href="http://blog.lastbackend.com">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                BLOG
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+
+            <li class="nav-item float-lg-right">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            <li class="nav-item float-lg-right active">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    View on GitHub
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+    <div class="container-fluid preview about-preview">
+
+    <div class="container">
+        <p class="source">
+            We are improving developers<br>
+            experiense <span class="minion">via</span> innovate products
+        </p>
+
+        <p class="source_pro">
+            Last.Backend is apps hosting built on Docker with command-line
+            toolkit to deploy apps and manage infrastructure.
+        </p>
+
+        <p class="source_pro">
+            Our system lets developers focus on their code without managing<br>
+            infrastructure.
+        </p>
+    </div>
+
+</div>
+
+    <div class="container-fluid team">
+    <div class="row team_text">
+        <p class="source_pro">
+            We're more than a company.
+        </p>
+
+        <p class="minion">
+            We're a family.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <img data-lazy-src="" src="../img/alexandr.png" class="rounded-circle">
+
+            <p>
+                Alex<br>
+                <span>CEO</span>
+            </p>
+
+        </div>
+
+        <div class="col-lg-3">
+            <img data-lazy-src="" src="../img/julia.png" class="rounded-circle">
+
+            <p>
+                Iuliia<br>
+                <span>COO</span>
+            </p>
+
+        </div>
+
+        <div class="col-lg-3">
+            <img data-lazy-src="" src="../img/konstantin.png" class="rounded-circle">
+
+            <p>
+                Konstantin<br>
+                <span>Senior Software Engineer</span>
+            </p>
+
+        </div>
+
+        <div class="col-lg-3">
+            <img data-lazy-src="" src="../img/nick.png" class="rounded-circle">
+
+            <p>
+                Nick<br>
+                <span>UX & Product Designer</span>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid preview about-preview philosophy">
+
+    <div class="container">
+        <p class="source">
+            The Philosophy <span class="minion">of</span> Last.Backend
+        </p>
+
+        <p class="source_pro">
+            Last.Backend is apps hosting built on Docker with connand-line<br>
+            toolkit to deploy apps and manage infrastructure.
+        </p>
+
+        <p class="source_pro">
+            Our system lets developers focus on their code without managing<br>
+            infrastructure.
+        </p>
+
+        <p class="source_pro">
+            Last.Backend is apps hosting built on Docker with connand-line<br>
+            toolkit to deploy apps and manage infrastructure.
+        </p>
+
+        <p class="source_pro">
+            Our system lets developers focus on their code without managing<br>
+            infrastructure.
+        </p>
+    </div>
+
+</div>
+
+    <div class="container-fluid bottom_nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    PRODUCTS
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/products">Overview</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/cloud">Cloud</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/dedicated">Dedicated</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/enterprise">Enterprise</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    RESOURCES
+                </p>
+
+                <p>
+                    <a href="https://blog.lastbackend.com/">Blog</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki/Getting-Started">Getting started</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki">Documantation</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki/API-Reference">API</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    COMPANY
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/about">About us</a>
+                </p>
+
+                <p>
+                    <a href="#">Our customers</a>
+                </p>
+
+                <p>
+                    <a href="#">Contacts</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    SUPPORT
+                </p>
+
+                <p>
+                    <a href="#">Help</a>
+                </p>
+
+                <p>
+                    <a href="#">Status</a>
+                </p>
+            </div>
+
+            <div class="col-md-8 offset-md-4 col-lg-4 offset-lg-0">
+                <div class="container">
+                    <p>
+                        SUBSCRIBE
+                    </p>
+
+                    <p>
+                        <a href="https://twitter.com/LastBackend"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/lastbackend"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.reddit.com/r/Lastbackend/"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/company/last-backend"> <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://angel.co/last-backend"> <i class="fa fa-angellist" aria-hidden="true"></i></a>
+                    </p>
+
+                    <p>
+                        Subscribe to our newsletter
+                    </p>
+
+                    <form class="form-inline">
+                        <input type="text" class="input_text"
+                               placeholder="ENTER YOU E-MAIL ADRESS"><input type="submit"
+                                                                            class="input_submit"
+                                                                            value="SUBMIT">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+    <a href="#">
+        <img data-lazy-src="" src="../img/l_footer.png">
+    </a>
+</footer>
+
+</body>
+
+</html>
