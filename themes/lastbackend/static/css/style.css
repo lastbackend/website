@@ -38,7 +38,7 @@ body {
 
 .navbar button {
     width: 100px;
-height: 40px;
+    height: 40px;
 }
 
 .auto_img {
@@ -259,7 +259,7 @@ height: 40px;
 }
 
 .auto .view-github {
-    background-color:  #3e94ff;
+    background-color: #3e94ff;
     color: #ffffff;
     font-size: 1.3em;
     box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1)
@@ -330,6 +330,11 @@ height: 40px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 1px;
+}
+
+.enterprise_resources a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .enterprise_resources {
@@ -597,7 +602,7 @@ hr {
     padding-bottom: 125px;
 }
 
-.auto .source_pro{
+.auto .source_pro {
     font-size: 4em;
 }
 
