@@ -173,7 +173,7 @@
 
                 if (validateEmail(em.value)) {
                     window.Intercom(&#39;boot&#39;, {
-                        app_id: &#39;e2la2rzj&#39;,
+                        app_id: &#39;hufjeo4r&#39;,
                         email: em.value,
                         created_at: new Date().now
                     });
@@ -324,7 +324,7 @@
 
                 if (validateEmail(em.value)) {
                     window.Intercom(&#39;boot&#39;, {
-                        app_id: &#39;e2la2rzj&#39;,
+                        app_id: &#39;hufjeo4r&#39;,
                         email: em.value,
                         created_at: new Date().now
                     });
@@ -471,7 +471,7 @@
 
                 if (validateEmail(em.value)) {
                     window.Intercom(&#39;boot&#39;, {
-                        app_id: &#39;e2la2rzj&#39;,
+                        app_id: &#39;hufjeo4r&#39;,
                         email: em.value,
                         created_at: new Date().now
                     });
@@ -619,7 +619,7 @@
 
                 if (validateEmail(em.value)) {
                     window.Intercom(&#39;boot&#39;, {
-                        app_id: &#39;e2la2rzj&#39;,
+                        app_id: &#39;hufjeo4r&#39;,
                         email: em.value,
                         created_at: new Date().now
                     });
