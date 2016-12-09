@@ -453,6 +453,10 @@ height: 40px;
     background-color: #212121;
 }
 
+.feedback_after {
+    display: none;
+}
+
 .button_white {
     background-color: #ffffff;
     box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.35);

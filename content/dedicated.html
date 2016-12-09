@@ -82,8 +82,8 @@
             var company = document.querySelector('.inter_com');
             var com_email = document.querySelector('.inter_mail');
             var lame = document.querySelector('.inter_last_name');
-
-            console.log(name.value, company.value, com_email.value, lame.value);
+            var fd_af = document.querySelector('.feedback_after');
+            var fd = document.querySelector('.feedback_form');
 
             if (em == null){
                 if (validateEmail(com_email.value)) {
@@ -98,9 +98,10 @@
                         created_at: new Date().now
                     });
 
-                    ga('send', 'event', 'company email');
+                    ga('send', 'event', 'company', 'email');
 
-                    com_email.value = '';
+                    fd.style.display = 'none';
+                    fd_af.style.display = 'block';
 
                     return true;
                 } else {
@@ -118,7 +119,7 @@
                         created_at: new Date().now
                     });
 
-                    ga('send', 'event', 'user email');
+                    ga('send', 'event', 'user', 'email');
 
                     em.value = '';
 
