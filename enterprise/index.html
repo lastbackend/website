@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://lastbackend.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/style.css">
+
+<title>Last.Backend</title>
+
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+
+    <script src="https://lastbackend.com/js/jquery-3.1.1.min.js"></script>
+
+<script src = "https://lastbackend.com/js/bootstrap.min.js" ></script>
+
+
+<script>
+    var keys       = {
+        'www.lastbackend.com' : 'UA-50023825-4',
+        'lastbackend.com'     : 'UA-50023825-4',
+        'cn.lastbackend.com'  : 'UA-50023825-4',
+        dev                   : 'UA-50023825-5',
+        '192.168.1.37'        : 'UA-50023825-5'
+    };
+    var domains    = {
+        'lastbackend.com'   : ['www.lastbackend.com','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        'cn.lastbackend.com': ['www.lastbackend.cn','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        dev                 : [
+            'lstbknd.net', 'app.lstbknd.net', 'dev.lstbknd.net', 'app.dev.lstbknd.net',
+            'localhost:4000', 'app.lb'
+        ]
+    };
+    var GA_KEY     = keys[document.domain] || keys.dev;
+    var GA_DOMAINS = domains[document.domain] || domains.dev;
+    var GA_local =
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src   = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', GA_KEY, 'auto', {'allowLinker': true});
+    ga('require', 'linker');
+    ga('linker:autoLink', GA_DOMAINS);
+    ga('send', 'pageview');
+    ga(tracking);
+
+    function tracking(tracker) {
+        var clientId = tracker.get('clientId');
+        ga('set', 'dimension1', clientId);
+
+        
+        var visited = getCookie('visited');
+        if (!visited) {
+            ga('send', 'event', 'user', 'init', '');
+        } else if (visited != clientId) {
+            ga('send', 'event', 'user', 'return', '');
+        }
+
+        var expires = new Date;
+        expires.setFullYear(expires.getFullYear() + 10);
+        setCookie('visited', clientId, {
+            expires: expires,
+            path   : '/'
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter28716836 = new Ya.Metrika({
+                    id: 28716836,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/28716836" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+
+    <button class="navbar-toggler hidden-lg-up" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+
+    <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+
+        <a class="navbar-brand hidden-lg-down" href="https://lastbackend.com">
+            <img data-lazy-src="" src="../img/l_logo.png">
+        </a>
+
+        <ul class="nav navbar-nav">
+
+            <li class="nav-item active dropdown nav_drop_products ">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">Products</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/cloud">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_cloud.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading blue_text">Cloud</h2>
+                                A complete cloud platform for<br>
+                                running modern apps.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/dedicated">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_dedicated.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading orange_text">Dedicated</h2>
+                                Develop, host, and scale your apps<br>
+                                in the your own cloud cluster.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/enterprise">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_enterprise.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading black_text">Enterprise</h2>
+                                Last.Backend offers the enterprise<br>
+                                features large companies need.
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend/wiki">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">Company</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/about">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                ABOUT LAST.BACKEND
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <a class="dropdown-item" href="http://blog.lastbackend.com">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                BLOG
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+
+            <li class="nav-item float-lg-right">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            <li class="nav-item float-lg-right active">
+                <a class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    View on GitHub
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+    <div class="container-fluid preview preview_enterprise">
+    <div class="row">
+        <div class="col-md-12 offset-md-0 col-lg-6 offset-lg-3">
+            <p class="source">
+                Last.Backend Enterprise
+            </p>
+
+            <p class="second_text">
+               Everything an enterprise needs in an app platform.
+            </p>
+
+            <a href="#feedback">
+                <button class="btn btn-secondary button_yellow">
+                    <span>LET'S TALK</span>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="container kinds_enterprise">
+    <div class="row">
+        <div class="col-lg-6 kinds_enterprise_left_blocks kinds_enterprise_top_blocks">
+            <img data-lazy-src="" src="../img/l_e_app_platform.png">
+
+            <p class="second_text">
+                All-in-one an App Platform
+            </p>
+
+            <hr>
+
+            <p class="third_text">
+                Last.Backend provides a full set of infrastructure<br>
+                services for containers, including storage services,<br>
+                networing, server management, load balancing and more.
+            </p>
+        </div>
+
+        <div class="col-lg-6 kinds_enterprise_top_blocks">
+            <img data-lazy-src="" src="../img/l_e_automation.png">
+
+            <p class="second_text">
+                Full automation
+            </p>
+
+            <hr>
+
+            <p class="third_text">
+                Deploy from GitHub, Bitbucket, or Docker Hub<br>
+                Built in Continuous integration & Delivery allowed you<br>
+                to don't care about half of infrastructure issue.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 kinds_enterprise_left_blocks">
+            <img data-lazy-src="" src="../img/l_e_container_orchestration.png">
+
+            <p class="second_text">
+                Containers orchestration
+            </p>
+
+            <hr>
+
+            <p class="third_text">
+               Turn all of you git repositories into containers<br>
+                using our platform. Build containers for every<br>
+                commit, automatically.
+            </p>
+        </div>
+
+        <div class="col-lg-6">
+            <img data-lazy-src="" src="../img/l_e_collaboration.png">
+
+            <p class="second_text">
+                Collaboration
+            </p>
+
+            <hr>
+
+            <p class="third_text">
+               Work in shared application stacks, and build more<br>
+                great apps together. Manage team members and<br>
+                collaborators across applications in different stages<br>
+                of developmets.
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid why">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-2 col-lg-6 offset-lg-0">
+
+                <p class="source">
+                    Why Last.Backend?
+                </p>
+
+                <p class="third_text">
+                    Last.Backend commercial solutions provide an out of the box PaaS<br>
+                    that gives IT Ops teams security and control over their enviroment,<br>
+                    while enabling developers to build applications in a self service way.
+                </p>
+
+                <p class="third_text">
+                    With a clear separation of concerns and robust tooling, organizations<br>
+                    are able to innovate faster, reduce costs and ensure security.
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/../documents/datasheet_enterprise.pdf">
+                        <button class="btn btn-secondary blue_back_white_text_button">DOWNLOAD DATASHEET</button>
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+
+                <img data-lazy-src="" src="../img/l_d_pdf.png">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid ico_form_img" id="feedback">
+    <p>
+        <img data-lazy-src="" src="../img/l_d_ico_contact_form.png">
+    </p>
+
+    <p class="second_text">
+        Please fiil the form below and we'll contact you as soon as possible.
+    </p>
+</div>
+
+<div class="container-fluid feedback">
+
+    <div class="feedback_after">
+        Thank you! We'll contact you soon.
+    </div>
+
+    <div class="feedback_form text-lg-center container">
+        <div class="form-group">
+
+            <input type="text" class="l inter_name form-control" aria-describedby="emailHelp"
+                   placeholder="First name *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="text" class="form-control inter_last_name" placeholder="Last name *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="email" class="inter_mail form-control" aria-describedby="emailHelp"
+                   placeholder="E-mail *">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="text" class="form-control inter_com" placeholder="Company *">
+
+        </div>
+
+        <button onclick="sendEmail()" class="btn btn-secondary button_white">
+            <span>SUBMIT</span>
+        </button>
+    </div>
+</div>
+
+    <div class="container-fluid bottom_nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    PRODUCTS
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/products">Overview</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/cloud">Cloud</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/dedicated">Dedicated</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/enterprise">Enterprise</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    RESOURCES
+                </p>
+
+                <p>
+                    <a href="https://blog.lastbackend.com/">Blog</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki/Getting-Started">Getting started</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki">Documantation</a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/lastbackend/lastbackend/wiki/API-Reference">API</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    COMPANY
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/about">About us</a>
+                </p>
+
+                <p>
+                    <a href="#">Our customers</a>
+                </p>
+
+                <p>
+                    <a href="#">Contacts</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    SUPPORT
+                </p>
+
+                <p>
+                    <a href="#">Help</a>
+                </p>
+
+                <p>
+                    <a href="#">Status</a>
+                </p>
+            </div>
+
+            <div class="col-md-8 offset-md-4 col-lg-4 offset-lg-0">
+                <div class="container">
+                    <p>
+                        SUBSCRIBE
+                    </p>
+
+                    <p>
+                        <a href="https://twitter.com/LastBackend"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/lastbackend"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.reddit.com/r/Lastbackend/"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/company/last-backend"> <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://angel.co/last-backend"> <i class="fa fa-angellist" aria-hidden="true"></i></a>
+                    </p>
+
+                    <p>
+                        Subscribe to our newsletter
+                    </p>
+
+                    <div class="form-inline">
+                        <input type="text" class="input_text"
+                               placeholder="ENTER YOU E-MAIL ADRESS"><input onclick="sendEmail()" type="submit"
+                                                                            class="input_submit"
+                                                                            value="SUBMIT">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+    <a href="#">
+        <img data-lazy-src="" src="../img/l_footer.png">
+    </a>
+</footer>
+
+    <script>
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/hufjeo4r';
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })()
+    </script>
+
+    <script>
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    </script>
+
+    <script>
+        function sendEmail() {
+
+            var em = document.querySelector('.email-form-in-preview');
+            var okay = document.querySelector('.okay');
+            var text_after = document.querySelector('.text_after_success_email_send');
+            var okay2 = document.querySelector('.okay2');
+            var tases2 = document.querySelector('.tases2');
+            var name = document.querySelector('.inter_name');
+            var company = document.querySelector('.inter_com');
+            var com_email = document.querySelector('.inter_mail');
+            var lame = document.querySelector('.inter_last_name');
+            var fd_af = document.querySelector('.feedback_after');
+            var fd = document.querySelector('.feedback_form');
+
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom('boot', {
+                        name: name.value + ' ' + lame.value,
+                        app_id: 'hufjeo4r',
+                        email: com_email.value,
+                        company: {
+                            id: company.value.toLowerCase(),
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'company', 'email');
+
+                    fd.style.display = 'none';
+                    fd_af.style.display = 'block';
+
+                    return true;
+                } else {
+                    com_email.style.color = '#F01300';
+                }
+            } else {
+                if (em.value == '') {
+                    em = document.querySelector('.email-form-2')
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'e2la2rzj',
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'user', 'email');
+
+                    em.value = '';
+
+                    okay.style.display = 'none';
+                    text_after.style.display = 'block';
+
+                    okay2.style.display = 'none';
+                    tases2.style.display = 'block';
+
+
+                    return true;
+                } else {
+                    em.style.color = '#F01300';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
