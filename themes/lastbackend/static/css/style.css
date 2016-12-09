@@ -293,6 +293,10 @@ body {
     text-align: left;
 }
 
+.range-slider-progress {
+    background-color: #000000;
+}
+
 .bottom_preview .third_text {
     font-size: 0.5em;
 }
@@ -663,10 +667,6 @@ hr {
 footer {
     background-color: #212121;
     padding-bottom: 25px;
-}
-
-.card-footer img {
-    width: 7%;
 }
 
 .bottom_nav .fa {
