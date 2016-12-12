@@ -1,3 +1,4 @@
 languageCode = "en-us"
 baseurl = "https://lastbackend.com"
 title = "Last.Backend"
+theme = "lastbackend"
