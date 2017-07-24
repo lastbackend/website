@@ -64,5 +64,14 @@
       <description>{{ partial &#34;head&#34; . }} {{ partial &#34;scripts&#34; . }}   {{ partial &#34;nav&#34; .}} {{ partial &#34;products/preview&#34; .}} {{ partial &#34;products/kinds&#34; .}} {{ partial &#34;products/use_cases&#34; .}} {{ partial &#34;products/resources&#34; .}} {{ partial &#34;bottom_nav&#34; . }} {{ partial &#34;footer&#34; . }}  (function () { var w = window; var ic = w.Intercom; if (typeof ic === &#34;function&#34;) { ic(&#39;reattach_activator&#39;); ic(&#39;update&#39;, intercomSettings); } else { var d = document; var i = function () { i.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://lastbackend.com/terms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lastbackend.com/terms/</guid>
+      <description>  {{ partial &#34;head&#34; . }} {{ partial &#34;scripts&#34; . }}   {{ partial &#34;nav&#34; .}} {{ partial &#34;terms/terms&#34; . }} {{ partial &#34;bottom_nav&#34; . }} {{ partial &#34;footer&#34; . }}   </description>
+    </item>
+    
   </channel>
 </rss>
